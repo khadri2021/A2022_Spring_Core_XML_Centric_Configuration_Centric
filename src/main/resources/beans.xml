@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd ">
+    <context:annotation-config/>
+    <context:property-placeholder location="classpath:flower.properties"/>
+
+    <bean id="config" class="com.khadri.spring.core.xml.centric.configuration.AppConfig"/>
+
+    <bean id="flower" class="com.khadri.spring.core.xml.centric.configuration.FLower">
+        <property name="color" value="${color}"/>
+        <property name="name" value="${name}"/>
+        <property name="smell" value="${smell}"/>
+    </bean>
+</beans>
